@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 export default function AboutPage(){
     return (
         <div className="container mx-auto p-6">
