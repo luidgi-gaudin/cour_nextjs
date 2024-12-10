@@ -1,21 +1,10 @@
-export default function ProjectsPage() {
-    const projects = [
-        {
-            id: 1,
-            title: 'Portfolio',
-            description: 'Un portfolio moderne construit avec HTML et CSS.',
-            link: 'https://luidgi-gaudin.fr',
-            github: 'https://github.com/luidgi-gaudin/portfolio',
-        },
-        {
-            id: 2,
-            title: 'BMW AutoShow',
-            description: 'Une application complète pour la gestion des tâches quotidiennes.',
-            link: 'https://luidgi-gaudin.fr/page-portfolio/bmw%20autoshow/',
-            github: 'https://github.com/luidgi-gaudin/TP-FINAL-HTML-CSS-JS',
-        },
-    ];
+'use client';
+import {useRouter} from "next/navigation";
+import {projects} from "@/app/project/projects";
 
+export default function ProjectsPage() {
+
+    const router = useRouter()
     return (
         <div className="container mx-auto p-4">
             <h1 className="text-4xl font-bold text-center mb-8">Projets</h1>
@@ -43,6 +32,10 @@ export default function ProjectsPage() {
                                 className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
                             >
                                 GitHub
+                            </a>
+                            <a onClick={() => router.push(`/project/${project.id}`)} className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
+                               rel="noopener noreferrer">
+                                Détails
                             </a>
                         </div>
                     </div>
